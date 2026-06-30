@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>App Clima</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="clima.html">🌤️ App Clima</a>
+    </div>
+  </nav>
+
+  <div class="container py-4">
+    <div class="row g-4">
+
+      <div class="col-12 col-lg-4">
+
+        <div class="card shadow-sm mb-3">
+          <div class="card-header bg-white">
+            <h5 class="mb-0 fw-bold">🔍 Buscar Clima</h5>
+          </div>
+          <div class="card-body">
+
+            <div id="alerta" class="alert d-none mb-3" role="alert"></div>
+
+            <div class="row">
+              <div class="col-6 mb-3">
+                <label for="cidade" class="form-label fw-semibold">Cidade</label>
+                <input type="text" id="cidade" class="form-control"
+                  placeholder="Ex: Campinas" />
+              </div>
+              <div class="col-6 mb-3">
+                <label for="estado" class="form-label fw-semibold">Estado</label>
+                <input type="text" id="estado" class="form-control"
+                  placeholder="Ex: SP" />
+              </div>
+            </div>
+
+            <button id="btn-buscar" class="btn btn-success w-100 fw-semibold">
+              Buscar Clima
+            </button>
+
+            <div id="resultado-clima" class="alert alert-success d-none text-center mt-3">
+              <div class="small text-muted">Resultado</div>
+              <div id="resultado-cidade" class="fs-5 fw-bold"></div>
+              <div id="resultado-estado" class="text-muted"></div>
+              <div id="resultado-temperatura" class="fs-4 fw-bold"></div>
+              <div id="resultado-descricao"></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="card shadow-sm">
+          <div class="card-header bg-white">
+            <h6 class="mb-0 fw-bold">📖 Dicas por Temperatura</h6>
+          </div>
+          <div class="card-body p-0">
+            <table class="table table-sm table-striped mb-0">
+              <thead class="table-success">
+                <tr>
+                  <th class="ps-3">Temperatura</th>
+                  <th>Sugestão</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="ps-3">&lt; 15°C</td><td><span class="badge bg-info">Frio — use casaco</span></td></tr>
+                <tr><td class="ps-3">15°C – 22°C</td><td><span class="badge bg-success">Ameno</span></td></tr>
+                <tr><td class="ps-3">23°C – 29°C</td><td><span class="badge bg-warning text-dark">Quente</span></td></tr>
+                <tr><td class="ps-3">≥ 30°C</td><td><span class="badge bg-danger">Muito quente — hidrate-se</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-12 col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-white">
+            <h5 class="mb-0 fw-bold">📋 Histórico de Buscas</h5>
+          </div>
+          <div class="card-body">
+
+            <div id="sem-buscas" class="text-center py-5 text-muted">
+              <div style="font-size: 3rem;">📭</div>
+              <p class="mt-2">Nenhuma busca realizada ainda.<br>Use o formulário ao lado para começar!</p>
+            </div>
+
+            <div id="tabela-historico" class="table-responsive d-none">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                  <tr>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Temperatura</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="corpo-tabela"></tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

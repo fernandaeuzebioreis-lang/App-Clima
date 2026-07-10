@@ -8,7 +8,7 @@ async function buscarClima() {
     return
   }
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${nomeCidade}&appid=351efba6d55dc25cf345e2a6e7e6f5d2&units=metric&lang=pt_br`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${nomeCidade}&appid=1f844da2b6781153fd62d174eabe9c34&units=metric&lang=pt_br`
 
   try {
     const resposta = await fetch(url)

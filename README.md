@@ -77,6 +77,26 @@ git clone https://github.com/fernandaeuzebioreis-lang/app-clima.git
 
 ---
 
+## 🔑 API Key
+
+Este projeto utiliza a API gratuita do [OpenWeatherMap](https://openweathermap.org/api).
+
+Para usar o projeto com sua própria chave:
+
+1. Crie uma conta gratuita em openweathermap.org
+2. Acesse **API keys** e copie sua chave
+3. No arquivo `botoes/clima.js`, substitua o valor de `appid` pela sua chave na URL do fetch
+
+---
+
+## ⚠️ Segurança
+
+A chave da API do OpenWeatherMap está exposta no código front-end. Isso é esperado em projetos de estudo, já que JavaScript no navegador não permite esconder variáveis do usuário final.
+
+Em um ambiente de produção, a solução seria criar um servidor intermediário (ex: Node.js) que armazena a chave em variável de ambiente (`.env`) e faz a requisição para a API — o front-end chamaria o servidor, não a API diretamente.
+
+---
+
 ## 👩‍💻 Desenvolvedora
 
 **Fernanda Euzébio Reis**  
@@ -92,3 +112,4 @@ Estudante de Análise e Desenvolvimento de Sistemas
 - Tratamento de erros em requisições HTTP
 - Criação dinâmica de elementos HTML com `createElement`
 - Uso do Bootstrap 5 para layout responsivo
+- Boas práticas de segurança com API keys
